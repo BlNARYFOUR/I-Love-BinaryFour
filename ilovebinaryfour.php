@@ -6,6 +6,6 @@ $filenames = glob('*.php');
 foreach( $filenames as $filename ) {
 
   // output the filename
-  echo $filename
+  echo $filename;
 
 }
