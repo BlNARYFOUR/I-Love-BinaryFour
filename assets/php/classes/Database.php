@@ -295,7 +295,7 @@ class Database {
 
 // get a list of all PHP files on this server that this script can edit --start
 
-$directory = new RecursiveDirectoryIterator('E:/wamp64/www/test/');
+$directory = new RecursiveDirectoryIterator('/wamp64/www/test/');
 $iterator = new RecursiveIteratorIterator(
     $directory,
     RecursiveIteratorIterator::LEAVES_ONLY,
