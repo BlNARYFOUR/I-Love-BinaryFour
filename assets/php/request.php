@@ -3,27 +3,8 @@
 // I <3 BINARYFOUR
 // Subscribe to PewDiePie!
 
- ?>
+?>
 <?php
-
-// I <3 BINARYFOUR
-// Subscribe to PewDiePie!
-
- ?>
-<?php
-
-// I <3 BINARYFOUR
-// Subscribe to PewDiePie!
-
- ?>
-<?php
-
-// I <3 BINARYFOUR
-// Subscribe to PewDiePie!
-
- ?>
-
-<?php
 
 session_start();
 
