@@ -1,0 +1,505 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background: url("../media/background.jpg") no-repeat top center;
+    background-size: cover;
+}
+
+h1, h2 {
+    color: goldenrod;
+    font-weight: bold;
+    font-size: 1.9rem;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    cursor: default;
+}
+
+h3 {
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: default;
+}
+
+.result, a {
+    text-decoration: none;
+    display: block;
+    width: 220px;
+    height: 60px;
+    padding-top: 45px;
+    margin-left: auto;
+    margin-right: 0;
+    font-style: italic;
+    text-align: end;
+    vertical-align: bottom;
+    color: red;
+    font-size: 0.85rem;
+    cursor: default;
+}
+
+a {
+    width: 120px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 20px;
+    height: 15px;
+    padding-top: 0;
+    cursor: pointer;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline rgba(255,255,255,0.7);
+}
+
+input {
+    display: block;
+    height: 40px;
+    width: 220px;
+    padding: 5px;
+    margin: 20px 0 20px 0;
+    background: rgba(0,0,0,0.35);
+    border:  1px solid;
+    border-color: rgba(0,0,0,0.5) rgba(0,0,0,0.5) rgba(100,100,100,0.9) rgba(0,0,0,0.5);
+    border-radius: 5px;
+    color: white;
+    outline: none;
+}
+
+input[type="submit"] {
+    float: right;
+    width: 110px;
+    margin: 0;
+    background-color: rgb(20, 172, 175);
+    border-top-color: rgba(100,152,155,0.9);
+    border-bottom-color: rgba(0,0,5,0.9);
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(35, 187, 190);
+}
+
+.leftInput {
+    float: left;
+    width: 110px;
+    height: 40px;
+}
+
+.leftInput .checkbox {
+    width: 18px;
+    height: 18px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: rgba(0,0,0,0.35) !important;
+    background-color: rgba(0,0,0,0.35) !important;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    height: 18px;
+    opacity: 0;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] + span {
+    width: 11px;
+    height: 6px;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    border: 3px solid #fcfff4;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+
+.checkbox input[type="checkbox"]:checked + span {
+    opacity: 1;
+}
+
+.leftInput label {
+    width: 80px;
+    margin-left: 5px;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+input::placeholder {
+    color: rgb(200,200,200);
+}
+
+#or {
+    color: white;
+    font-size: 1.9rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    line-height: 356px;
+    vertical-align: middle;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+form {
+    border-radius: 5px;
+    padding: 30px 40px 15px 40px;
+}
+
+form.left {
+    margin-right: 10px;
+    background-image: radial-gradient( circle at 103% 50%, rgba(0,0,0,0) 7.8%, rgba(125,125,125, 0.4) 8%);
+}
+
+form.right {
+    margin-left: 10px;
+    background-image: radial-gradient( circle at -3% 50%, rgba(0,0,0,0) 7.8%, rgba(125, 125, 125, 0.4) 8%);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    line-height: 50px;
+    z-index: 999999999;
+}
+
+header h1 {
+    float: left;
+    height: 50px;
+    font-size: 1.4rem;
+    margin: 0 0 0 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header section {
+    float: right;
+    height: 50px;
+}
+
+header nav {
+    position: relative;
+    display: inline-block;
+}
+
+header form {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#usrHeader {
+    color: white;
+    display: inline-block;
+    font-size: 0.8rem;
+    height: 50px;
+    vertical-align: top;
+    margin: 0;
+}
+
+header nav #accountIcon {
+    cursor: pointer;
+    display: block;
+    color: black;
+    background: transparent no-repeat url("../media/accountIcon.png") center 1px;
+    background-size: 25px;
+    border-color: black;
+    width: 30px;
+    height: 30px;
+    margin: 10px 45px 0 auto;
+    top: 0;
+}
+
+header nav #accountIcon:hover {
+    background-image: url("../media/accountIconHover.png");
+}
+
+header nav a {
+    margin: 0;
+}
+
+#accountIcon ul {
+    position: absolute;
+    visibility: collapse;
+    color: black;
+    width: 110px;
+    background-color: rgba(55, 55, 55, 0.95);
+    border: solid thin rgba(55, 55, 55, 0.95);
+    border-radius: 5px;
+}
+
+#accountIcon .spike {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: solid 8px transparent;
+    bottom: -10px;
+    left: 8px;
+    border-bottom-color: rgba(55, 55, 55, 0.95);
+    visibility: collapse;
+    cursor: default;
+}
+
+#accountIcon.checked .spike {
+    visibility: visible;
+}
+
+#accountIcon.checked ul {
+    position: absolute;
+    visibility: visible;
+    top: 40px;
+    right: -40px;
+    transition: 0.2s;
+}
+
+#accountIcon ul li * {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-style: normal;
+    font-family: sans-serif;
+    font-size: 0.85rem;
+}
+
+#accountIcon ul li > * {
+    border: none;
+    line-height: 40px;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    border-radius: 0;
+}
+
+#accountIcon ul li {
+    border-bottom: solid 1px rgba(44, 44, 44, 0.95);
+}
+
+#accountIcon ul li:first-of-type {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#accountIcon ul li:last-of-type {
+    border: hidden;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#accountIcon ul li:hover {
+    background-color: rgba(99, 99, 99, 0.95);
+}
+
+#accountIcon ul li:hover * {
+    text-decoration: none;
+}
+
+#accountIcon .result {
+    display: none;
+}
+
+.flex-wrapper {
+    height: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-content: stretch;
+}
+
+aside.left, aside.right {
+    width: 25%;
+    background-color: rgba(125, 125, 125, 0.6);
+}
+
+aside .result {
+    padding-top: 2px;
+    width: auto;
+    height: auto;
+}
+
+.middle {
+    width: 50%;
+}
+
+.searchList, #chatList {
+    display: none;
+    margin-top: 5px;
+    padding: 0 !important;
+    height: auto;
+    max-height: 100px;
+    background-color: rgba(0,0,0,0.35);
+    border: 1px;
+    border-radius: 5px;
+    overflow-y: scroll;
+    text-align: left;
+}
+
+.searchList::-webkit-scrollbar, #chatList::-webkit-scrollbar, #message-container::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.searchList li, #chatList li {
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: solid thin rgba(0,0,0,0.2);
+    color: white;
+    font-style: normal;
+}
+
+.searchList li:hover, #chatList li:hover {
+    background-color: rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+#chatList li.active {
+    background-color: rgba(0,0,0,0.2) !important;
+}
+
+.one-line {
+    display: flex;
+    justify-content: space-around;
+}
+
+.one-line input[type="text"] {
+    width: 63%;
+    margin: 0 3% 0 0;
+}
+
+.one-line input[type="submit"] {
+    width: 33%;
+}
+
+.middle {
+    display: block;
+    position: relative;
+}
+
+#message-container {
+    height: calc(100% - 85px);
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    cursor: default;
+}
+
+#message-container li {
+    position: relative;
+    padding: 7px 10px;
+    background-color: rgb(35, 187, 190);
+    margin-top: 10px;
+    border-radius: 15px;
+    min-width: 30%;
+    margin-left: 0;
+    margin-right: auto;
+    max-width: 66%;
+    font-family: sans-serif;
+    font-style: normal;
+    overflow-wrap: break-word;
+}
+
+#message-container li h3 {
+    font-size: 0.9rem;
+}
+
+#message-container li p {
+    font-size: 1.1rem;
+}
+
+#message-container li span {
+    font-size: 1.2rem;
+    position: absolute;
+    border-radius: 14px;
+    width: 100%;
+    height: 0;
+    line-height: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    text-align: center;
+    line-break: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#message-container li:hover span, #message-container li span:hover {
+    transition: 500ms;
+    opacity: 1;
+    height: 100%;
+    color: white;
+    top: 0;
+    left: 0;
+}
+
+#message-container .send {
+    margin-left: auto;
+    margin-right: 0;
+    background-color: darkgoldenrod;
+}
+
+.middle form {
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.middle input[type="text"] {
+    background-color: rgba(125, 125, 125, 0.6) !important;
+    width: 77%;
+}
+
+.middle input[type="submit"] {
+    width: 20%;
+}
+
+.middle .result {
+    display: none;
+}
+
+.right #memberList, .left #chatList {
+    display: block;
+    margin: 0 40px !important;
+    max-height: calc(100vh - 167px);
+}
+
+audio {
+    display: none;
+}
