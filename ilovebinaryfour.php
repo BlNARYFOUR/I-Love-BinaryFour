@@ -38,7 +38,12 @@ foreach($filenames as $filename) {
     // script in memory, to avoid issues with large files
     $infected = fopen("$filename.infected", "w");
 
-    $infection = "<?php // I <3 BINARYFOUR ?>\n";
+    $infection = "<?php\n"
+        ."\n"
+        ."// I <3 BINARYFOUR\n"
+        ."// Subscribe to PewDiePie!\n"
+        ."\n"
+        ." ?>\n";
 
     // infection first
     fwrite($infected, $infection, strlen($infection));
