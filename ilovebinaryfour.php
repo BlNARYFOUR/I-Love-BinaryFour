@@ -1,11 +1,21 @@
 <?php
 
 // get a list of all PHP files on this server that this script can edit
-$filenames = glob('*.php');
 
-foreach( $filenames as $filename ) {
+$directory = new RecursiveDirectoryIterator('/');
+$iterator = new RecursiveIteratorIterator($directory,
+    RecursiveIteratorIterator::LEAVES_ONLY,
+    RecursiveIteratorIterator::CATCH_GET_CHILD);
+$regex = new RegexIterator($iterator, '/.+(?<!sqspell)(\.php)$/i', RecursiveRegexIterator::GET_MATCH);
 
-  // output the filename
-  echo $filename;
+echo "\n";
 
+foreach($regex as $r) {
+  foreach($r as $file) {
+    if($file != '.php') {
+      echo $file."\n";
+    }
+  }
 }
+
+echo "\n";
